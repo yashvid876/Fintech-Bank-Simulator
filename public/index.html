@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banking Data Sharing Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Banking data sharing simulator</h1>
+  <p class="sub">Apps request access over the bank’s API. The customer allows or denies, and every call is checked against a signed JWT and live consent.</p>
+
+  <section class="card" id="loginBox">
+    <h2>Customer sign in</h2>
+    <div class="row">
+      <input type="text" id="u" value="asha" aria-label="Username">
+      <input type="password" id="p" value="bank123" aria-label="Password">
+      <button id="loginBtn">Sign in</button>
+    </div>
+    <p class="mono">Demo login: asha / bank123</p>
+    <p class="err" id="loginErr"></p>
+  </section>
+
+  <div id="app" class="hide">
+    <div class="row between app-header">
+      <p class="pill ok">Signed in as asha</p>
+      <button class="ghost" id="logoutBtn">Sign out</button>
+    </div>
+    <nav class="page-nav" id="pageNav" aria-label="Banking activities"></nav>
+
+    <section class="page hide" id="consentsPage">
+      <section class="card">
+        <h2>Consent manager</h2>
+        <div id="pending"></div>
+        <p>Granted data per app. Untick a box to withdraw access immediately, even for tokens already issued.</p>
+        <div class="wrap"><table id="consentTbl"></table></div>
+      </section>
+    </section>
+
+    <section class="page hide" id="activityPage">
+      <div id="activityContent"></div>
+    </section>
+
+    <section class="page hide" id="auditPage">
+      <section class="card">
+        <div class="row between"><h2>Bank API audit log</h2><button class="ghost" id="clearLog">Clear log</button></div>
+        <div id="log"></div>
+      </section>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

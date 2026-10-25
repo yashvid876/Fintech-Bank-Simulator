@@ -1,0 +1,46 @@
+:root{--bg:#f3f5f2;--surface:#fff;--ink:#16211c;--muted:#5d6b64;--line:#d6ddd8;--accent:#0f6b4f;--accent-ink:#fff;--ok:#0f6b4f;--bad:#b3261e;--okbg:#e2f1ea;--badbg:#fbe7e5;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#101613;--surface:#18211c;--ink:#e6efe9;--muted:#9baba3;--line:#2d3a33;--accent:#4cc79a;--accent-ink:#06261b;--ok:#4cc79a;--bad:#ff8a80;--okbg:#17352a;--badbg:#3b1d1a;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Georgia,"Times New Roman",serif}
+h1,h2,h3,button,th,.pill{font-family:"Trebuchet MS",Verdana,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;margin:0 0 4px}
+h2{font-size:17px;margin:0 0 10px}
+h3{font-size:15px;margin:0}
+p{margin:0 0 10px}
+.sub{color:var(--muted);margin-bottom:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
+.card.top{margin-top:16px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.grid .card{margin:0}
+.app-header{margin:0 0 12px}
+.app-header p{margin:0}
+.page-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.page-nav a{display:inline-block;padding:7px 12px;border:1px solid var(--line);border-radius:6px;color:var(--ink);text-decoration:none;font:14px "Trebuchet MS",Verdana,sans-serif}
+.page-nav a:hover,.page-nav a[aria-current=page]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.page .card{margin-bottom:0}
+button{cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:6px;padding:7px 12px;font-size:14px}
+button.ghost{background:transparent;color:var(--accent)}
+button.danger{background:var(--bad);border-color:var(--bad);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input[type=text],input[type=password]{padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:14px;width:100%;max-width:220px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.row.between{justify-content:space-between}
+.row.between h2{margin:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{font-size:13px;color:var(--muted);font-weight:600}
+.c{text-align:center}
+.wrap{overflow-x:auto}
+.switch{width:20px;height:20px;accent-color:var(--accent)}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:13px}
+.ok{background:var(--okbg);color:var(--ok)}
+.bad{background:var(--badbg);color:var(--bad)}
+.mono{font:12px/1.4 Consolas,Menlo,monospace;color:var(--muted)}
+pre{margin:6px 0;padding:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font:12px/1.4 Consolas,Menlo,monospace;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+.big{font:700 28px "Trebuchet MS",Verdana,sans-serif}
+.err{color:var(--bad)}
+.request{border:1px solid var(--accent);border-radius:6px;padding:10px 12px;margin-bottom:12px;background:var(--okbg)}
+#log{max-height:220px;overflow-y:auto;font:12px/1.6 Consolas,Menlo,monospace}
+#log div{border-bottom:1px solid var(--line);padding:2px 0}
+.hide{display:none}
